@@ -22,3 +22,20 @@ cоответствующее приветствие.
 	Примеры приветствий: Необходимо перевести и внедрить несколько 
 		вариантов приветствий на разных языках.
 */
+
+const browserLanguage = navigator.language.split('-')[0];
+console.log(browserLanguage);
+
+switch(true){
+	case browserLanguage == 'ru':
+		console.log('Привет');
+		break;
+	case browserLanguage == 'en':
+		console.log('Hellow');
+		break;
+	case browserLanguage == 'de':
+		console.log('Hallo');
+		break;
+	default:
+		console.log('Неизвестный язык');
+}
