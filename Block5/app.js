@@ -128,7 +128,7 @@ console.log(`Я хочу купить ${message}`);
 	* Обработка возможных ответов:
 	* Приемлемые ответы: числа 22, -8, или строка "я не робот".
 	* Неприемлемый ответ: любой другой ввод считается как робот.
-*/
+
 let res = prompt('Сколько будет 7 плюс/минус 15?');
 switch(true){
 	case Number(res) == 22:
@@ -139,3 +139,12 @@ switch(true){
 	default:
 		console.log('ты робот');
 }
+*/
+console.log(!''  )
+console.log(!'' && 'Yes' )
+console.log('No' && 'false')
+console.log(!('No' && 'false'))
+console.log(!'' && 'Yes' || !('No' && 'false'))
+
+console.log(!'' && true && 'Yes' && Boolean('true') && 'PS')
+
