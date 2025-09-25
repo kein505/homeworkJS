@@ -153,17 +153,103 @@ const avg = arr.reduce((acc, operation, i) =>{
 }, 0);
 console.log(avg);
 
-/////////////////////////////////////////////////////////////////
-console.log('-------7--------');
+/////////////////////////////////////////////////////////////////11.7. find и findIndex
+console.log('-------11.7. find и findIndex--------');
+
+const arr2 = [2, 4, 4, 10];
+let elGT5 = arr2.find(el => el<5);
+console.log(elGT5);
+
+let indexGT5 = arr2.findIndex(el => el>5);
+console.log(indexGT5);  // index = 3
+
+indexGT5 = arr2.findIndex(el => el<0);
+console.log(indexGT5);   // index = -1
+
+/////////////////////////////////////////////////////////////////11.8. Упражнение - реализация some
+console.log('-------11.8. Упражнение - реализация some--------');
+
+const arr3 = [2, 4, 4, 10, 20];
+
+function some(arr, chislo){
+	let searching = arr.find(el => el === chislo)
+	return searching == undefined ? false : true;
+}
+
+console.log(some(arr3, 3));  
+
+console.log(arr3.some(el => el === 4));
 
 
-/////////////////////////////////////////////////////////////////
-console.log('-------8--------');
+/////////////////////////////////////////////////////////////////11.9. flat и flatMap
+console.log('-------11.9. flat и flatMap--------');
+
+const prices2 = [[2, 4], [3, 4], [10, [20, 50]]];
+const res = prices2.flat(10);
+const res2 = prices2.flatMap(el => el.concat([1]));
+console.log(res);
+console.log(res2);
+
+/////////////////////////////////////////////////////////////////11.10. sort
+console.log('-------11.10. sort--------');
+
+const users = ['Вася', 'Маша', 'Катя', 'Аня'];
+console.log(users);
+users.sort();
+console.log(users);
+
+const operations3= [100, -300, -100, 50, 480];
+console.log(operations3);
+
+// <0 - a,b  - сохраняем порядок
+// > 0 - b,a - меняем порядок
+operations3.sort((a, b) => {
+	if(a > b) {
+		return 1;
+	}
+	if(a < b) {
+		return -1;
+	}
+});
+
+console.log(operations3);
+
+operations3.sort((a, b) => {
+	if(a < b) {
+		return 1;
+	}
+	if(a > b) {
+		return -1;
+	}
+});
+
+console.log(operations3);
+
+// короткая запись
+operations3.sort((a, b) => a-b);
+
+console.log(operations3);
 
 
-/////////////////////////////////////////////////////////////////
-console.log('-------9--------');
+///////////////////////////////////////////////////////////////// 11.11. Быстрое создание массивов
+console.log('-------11.11. Быстрое создание массивов--------');
 
+const array = [1, 2, 3, 4, 5];
+
+console.log(new Array(1, 2, 3, 4, 5));
+const array2 = new Array(5);
+console.log(array2);
+console.log(array2.map(el => el + 1));
+array2.fill(1, 0, 3);
+array2.fill(2, 3, 5);
+console.log(array2);
+
+const array3 = Array.from({ length: 5}, (cur, i) => i + 1);
+console.log(array3);
 
 /////////////////////////////////////////////////////////////////
 console.log('-------10--------');
+
+let arr5 = [1, 2, 10, 15];
+arr5.sort()
+console.log(arr5);
