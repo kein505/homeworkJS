@@ -40,6 +40,16 @@ let arr = ['10-02-2022', 'тест', '11/12/2023', '00/13/2022', '41/12/2023'];
 console.log(filterValidDate(arr));
 
 
+const arr2 = [0, 12, -200, 0, 15];
+let rrr = arr2.sort((a,b)=> a-b).filter(operation => {
+		return operation !== 0;
+	});
+console.log(rrr);
+
+let rrr2 = arr2.map(operation => operation ** 2).sort((a,b)=>a-b);
+
+console.log(rrr2);
+
 
 
 
