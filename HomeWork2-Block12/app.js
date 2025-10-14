@@ -53,6 +53,71 @@ console.log(IsCardValid(cardBankTrue));
     return summChisel % 10 === 0;
  }
 
+const str = 'AABBCCC';
+const str2 = 'AABCCDDD';
+
+ console.log(CheckStr(str));
+ console.log(CheckStr(str2));
+
+ console.log(CheckStr2(str));
+ console.log(CheckStr2(str2));
+
+function CheckStr2(string){
+    let count = 1;
+    let result = "";
+    for(let i =0; i<string.length; i++){
+        if(string[i]===string[i+1]){
+            count++
+        }
+        else{
+            result +=string[i]+count;
+            count =1;
+        }
+    }
+    return result;
+}
+
+
+ function CheckStr(string){
+    let newMas = string.split('');
+    let result = [];
+    for(let i =0; i<newMas.length; i++){
+        let schetchik =0;
+
+        for(let j =i; j<newMas.length; j++){
+            if(newMas[i]===newMas[j] ){
+                schetchik++;
+            }
+            if(!result.includes(newMas[i]) && newMas[i] !== newMas[j] ){
+                result.push(newMas[i]);
+                result.push(schetchik);
+            }
+        }
+    }
+
+    let newMas2 = newMas.reverse();
+    for(let i =0; i<newMas2.length; i++){
+        let schetchik =0;
+
+        for(let j =i; j<newMas2.length; j++){
+            if(newMas2[i]===newMas2[j] ){
+                schetchik++;
+            }
+            if(!result.includes(newMas2[i]) && newMas2[i] !== newMas2[j] ){
+                result.push(newMas2[i]);
+                result.push(schetchik);
+            }
+        }
+    }
+
+    
+    return result.join('');
+}
+
+
+
+
+
 
 
 
